@@ -41,6 +41,7 @@
         set wildmenu
     endif
 
+    let mapleader = ','
     " backgound color scheme {
         set background=dark
 
