@@ -15,7 +15,7 @@
         set directory=~/.local/share/nvim/swap//
         set display=lastline,msgsep
         set encoding=utf-8
-        set fillchars=vert:|,fold:-
+        set fillchars=vert:\|,fold:- "E488: | must be \|(escape form)
         set fsync
         set formatoptions=tcqj
         set history=10000
@@ -73,6 +73,8 @@
     set iskeyword-=-
 
     set backup
+    set backupdir=~/.local/share/nvim/backup
+
     if has('persistent_undo')
         set undofile
         set undolevels=1000
@@ -147,6 +149,10 @@
 " plugins -- plug-vim {
     call plug#begin('~/.vim/plugged')
         Plug 'nathanaelkane/vim-indent-guides'
+        Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+        "Plug 'OmniSharp/omnisharp-vim'
+        Plug 'tpope/vim-vinegar'
+        Plug 'leafgarland/typescript-vim'
     call plug#end()
 " }
 
@@ -155,4 +161,11 @@
     let g:indent_guides_enable_on_vim_startup = 1
     let g:indent_guides_start_level=2
     let g:indent_guides_guide_size=1
+
+    "netrw settings
+    let g:netrw_liststyle = 3
+    let g:netrw_banner = 0
+    "let g:netrw_browse_split = 2
+    "let g:netrw_altv = 1
+    "let g:netrw_winsize = 25
 " }
