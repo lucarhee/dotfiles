@@ -31,9 +31,15 @@ endif
 " Required:
 call plug#begin(expand('~/.config/nvim/plugged'))
 
+" Syntax highlight
+" Default highlight is better than polyglot
+let g:polyglot_disabled = ['python', 'rst']
+let python_highlight_all = 1
+
 "*****************************************************************************
 "" Plug install packages
 "*****************************************************************************
+Plug 'vimwiki/vimwiki'
 Plug 'kurtpreston/vimcolors'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
@@ -51,8 +57,6 @@ Plug 'Yggdroot/indentLine'
 Plug 'editor-bootstrap/vim-bootstrap-updater'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-rhubarb' " required by fugitive to :Gbrowse
-Plug 'tomasr/molokai'
-
 
 if isdirectory('/usr/local/opt/fzf')
   Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
@@ -196,6 +200,7 @@ let g:session_command_aliases = 1
 syntax on
 set ruler
 set number
+set relativenumber
 
 let no_buffers_menu=1
 if &diff
@@ -592,11 +597,6 @@ let g:jedi#smart_auto_mappings = 0
 
 " vim-airline
 let g:airline#extensions#virtualenv#enabled = 1
-
-" Syntax highlight
-" Default highlight is better than polyglot
-let g:polyglot_disabled = ['python']
-let python_highlight_all = 1
 
 
 " rust
