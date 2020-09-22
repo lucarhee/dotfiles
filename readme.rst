@@ -3,3 +3,14 @@
 ========================
 
 nvim
+
+- vim bootstarp
+- color scheme
+
+i3wm
+
+- startup execution
+
+zsh
+
+- alias
