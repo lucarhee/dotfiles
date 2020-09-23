@@ -580,6 +580,9 @@ augroup vimrc-python
       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
 augroup END
 
+" resturcturedtext
+autocmd FileType rst setlocal expandtab shiftwidth=3 tabstop=3
+
 " jedi-vim
 let g:jedi#popup_on_dot = 0
 let g:jedi#goto_assignments_command = "<leader>g"
