@@ -1,9 +1,13 @@
 " vim-bootstrap 2020-09-21 13:54:03
+" vim-bootstrap.com에서 기본적인 것을 생성했다
 
 "*****************************************************************************
 "" Vim-Plug core
 "*****************************************************************************
 let vimplug_exists=expand('~/.config/nvim/autoload/plug.vim')
+" vimplug_exists 변수 설정
+" expand()는 ~기호같은 것을 절대경로로 풀어줌
+
 if has('win32')&&!has('win64')
   let curl_exists=expand('C:\Windows\Sysnative\curl.exe')
 else
@@ -483,6 +487,18 @@ nnoremap <Leader>o :.Gbrowse<CR>
 "" Custom configs
 "*****************************************************************************
 
+" Code folding options
+nmap <leader>f0 :set foldlevel=0<CR>
+nmap <leader>f1 :set foldlevel=1<CR>
+nmap <leader>f2 :set foldlevel=2<CR>
+nmap <leader>f3 :set foldlevel=3<CR>
+nmap <leader>f4 :set foldlevel=4<CR>
+nmap <leader>f5 :set foldlevel=5<CR>
+nmap <leader>f6 :set foldlevel=6<CR>
+nmap <leader>f7 :set foldlevel=7<CR>
+nmap <leader>f8 :set foldlevel=8<CR>
+nmap <leader>f9 :set foldlevel=9<CR>
+
 " c
 autocmd FileType c setlocal tabstop=4 shiftwidth=4 expandtab
 autocmd FileType cpp setlocal tabstop=4 shiftwidth=4 expandtab
@@ -578,6 +594,7 @@ augroup vimrc-python
   autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
       \ formatoptions+=croq softtabstop=4
       \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+      \ foldmethod=indent
 augroup END
 
 " resturcturedtext
@@ -662,3 +679,13 @@ else
   let g:airline_symbols.readonly = ''
   let g:airline_symbols.linenr = ''
 endif
+
+" Allow using the repeat opeartor with a visual selection (!)
+" from spf13-vim
+" http://stackoverflow.com/a/8064607/127816
+vnoremap . :normal .<CR>
+
+" vimwiki
+let g:vimwiki_list = [{'path':'$HOME/wiki/vimwiki', 'path_html':'$HOME/wiki/vimwiki_html'},
+                     \{'path':'$HOME/wiki/writings', 'path_html':'$HOME/wiki/writings_html'},
+                     \{'path':'$HOME/wiki/doing', 'path_html':'$HOME/wiki/doing_html'}]
