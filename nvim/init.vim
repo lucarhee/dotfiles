@@ -43,6 +43,7 @@ let python_highlight_all = 1
 "*****************************************************************************
 "" Plug install packages
 "*****************************************************************************
+Plug 'cohama/agit.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'kurtpreston/vimcolors'
 Plug 'scrooloose/nerdtree'
@@ -180,6 +181,10 @@ set hidden
 
 "" Searching
 set hlsearch
+" ctrl+c to toggle highlight.
+let hlstate=0
+nnoremap <F1> :if (hlstate%2 == 0) \| nohlsearch \| else \| set hlsearch \| endif \| let hlstate=hlstate+1<cr>
+
 set incsearch
 set ignorecase
 set smartcase
