@@ -43,6 +43,14 @@ let python_highlight_all = 1
 "*****************************************************************************
 "" Plug install packages
 "*****************************************************************************
+
+" for PlantUML
+" Plug 'scrooloose/vim-slumlord'
+Plug 'tyru/open-browser.vim'
+Plug 'aklt/plantuml-syntax'
+Plug 'weirongxu/plantuml-previewer.vim'
+
+Plug 'mhinz/vim-startify'
 Plug 'cohama/agit.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'kurtpreston/vimcolors'
